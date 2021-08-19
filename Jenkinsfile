@@ -1,12 +1,4 @@
 pipeline {
-  options {
-    timestamps()
-    timeout(time: 180, unit: 'MINUTES')
-    ansiColor('xterm')
-    disableConcurrentBuilds()
-    buildDiscarder(logRotator(numToKeepStr: '250', daysToKeepStr: '5'))
-  }
-
   agent any
   environment {
     AWS_ACCESS_KEY_ID     = credentials('PACKER_AWS_ACCESS_KEY')
